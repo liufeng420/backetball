@@ -73,6 +73,7 @@ namespace XFramework.Backetball
 			return 1f + Random.Range(-maxOffset, maxOffset);
 		}
 
+		// void FixedUpdate()
 		void Update()
 		{
 			input.x = Input.GetAxis(XAxis);
@@ -105,7 +106,7 @@ namespace XFramework.Backetball
 				velocity.y = input.y;
 			}
 
-			controller.AddForce(velocity*dt);
+			controller.AddForce(velocity);
 			float absInputX = Mathf.Abs(input.x);
 			float absInputY = Mathf.Abs(input.y);
 			if (absInputX < 0.1f && absInputY < 0.1f)
